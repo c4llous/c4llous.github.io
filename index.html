@@ -184,9 +184,7 @@ font-family: 'Roboto Condensed', sans-serif;
 .ui-input input:focus {
   color: #6EB1FF;
 }
-.ui-input input:focus + label::after {
-  background-color: #6EB1FF;
-}
+.ui-input input:focus + label::afterdocument.getElementById('a2').style.border = "2px solid black";
 .ui-input input:focus + label span::after {
   background-image: linear-gradient(to right, #6EB1FF 50%, rgba(255, 255, 255, 0) 0%);
   background-position: 0% 50%;
@@ -270,7 +268,7 @@ font-family: 'Roboto Condensed', sans-serif;
  @media only screen and (max-width: 768px) {
 
 .main  {
-font-size: 6vw;
+font-size: 12vw;
 /* color: rgb(82, 5, 82); */
 padding-bottom: 6vh; 
 padding-left: 2vw;
@@ -313,6 +311,11 @@ padding-left: 2vw;
  }
 .showbutton {
   background-color: black;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  float: right;
   margin-left: 2vw;
   margin-top: 4vh;
   color: #fff;
@@ -322,6 +325,9 @@ padding-left: 2vw;
   background-color: rgb(90, 89, 89);
   /* color: black; */
   width: 22%;
+}
+#z1 #z2 #z3 #z4 #z4 #z5 #z6 #z7 #z8 #z9 #z11 {
+  display: none;
 }
   </style>
   <body>
@@ -458,7 +464,7 @@ more, you can contact us.
     </div>
      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasright" aria-controls="offcanvasRight">Read More..</button>
    <br>
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasright" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasright" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
       <h5 id="offcanvasRightLabel">Definition: ‘Subject 1’, Subject 2’</h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -521,7 +527,7 @@ more, you can contact us.
         Read more..
       </button>
       
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasExampleLabel"> <b>Definition: Trouble</b> </h5>
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -601,7 +607,7 @@ more, you can contact us.
 <p><strong>&lsquo; Thankfulness&rsquo;:</strong><br>When, instead of Blaming Subject 2 for the Trouble, Subject 1 is Thankful to Subject 2 for the opportunity to take the Trouble for Subject 2, it is called &lsquo;Thankfulness.&rsquo;</p>
   <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#myoffcanvas" aria-controls="offcanvasRight">Read more..</button>
   
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="myoffcanvas" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="myoffcanvas" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
       <h5 id="offcanvasRightLabel"><b>Definition: Blame (Includes Negative Blame = ‘Thankfulness’)</b></h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -633,6 +639,8 @@ more, you can contact us.
   <br> 
   <p>3. Subject 1 is Thankful to Subject 2 for the Trouble he takes for Subject 2(if this is selected selected, the level of Thankfulness must be selected too)</p>
   <p><br></p>
+
+  <p>1. Neither Blames nor is Thankful to Subject 2 for his Trouble. In such a case, The Blame/Thankfulness score is +1<br><br>2. Subject 1 Blames Subject 2 : ( All Blame scores are NEGATIVE. The least Blame score is -1 and the highest Blame score is -10. Please choose the Blame level felt in the drop down below.)<br><br>3. Subject 1 is Thankful to Subject 2 for the Trouble he takes for Subject 2 ( All Thankfulness scores are POSITIVE. The least Thankfulness score is +1 and the highest Thankfulness score is +10. Please choose the Thankfulness level felt in the drop down below.)<br><br>Please select the level of Blame or Thankfulness<br>felt by Subject 1 towards Subject 2 for the Trouble<br>of Subject 1 because of Subject 2: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </p>
   <form action="">
     <label for="thankful" class="sub">How Thankful/blame is Subject 1 to Subject 2? or  </label><select name="thankful" id="thankful">
       
@@ -681,7 +689,7 @@ more, you can contact us.
     Read more..
   </button>
   
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="myoffcanvas2" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="myoffcanvas2" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="offcanvasExampleLabel"><b>Definition: Potential Physical Proximity (PPP)</b></h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -741,8 +749,7 @@ more, you can contact us.
     <p><b>Choose the level of PPP between Subject 1 and Subject 2</b> </p>
     <form action="">
       <label for="ppp" class="sub">Level of PPP :</label><select name="ppp" id="ppp">
-        <option value="0" selected>0</option>
-        <option value="1">1</option>
+       <option value="1" selected>1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
@@ -765,7 +772,7 @@ more, you can contact us.
     
      <br>
      <div id="re">
-      <button class="btn" onclick="results()">Results</button>
+      <button class="btn" onclick="results()" onclick="results1()">Results</button>
        
          <div id="work">
             <div class="imp">
@@ -782,6 +789,21 @@ more, you can contact us.
         
            </ol>
             <p class="main"> <b>The TAB score for the emotions felt by Subject 1 for Subject 2 is: </b> <p id="a4"></p> </p>
+            <br>
+            <p>The maximum possible score is +1000. This signified maximum love, elation, or devotion. A positive number less than 1000 shows the relative amount of positive emotions.<br>The maximum score for negative emotions is -1000. Which shows maximum hatred, depression, or disregard. A negative number less than 1000 shows the relative amount of negative emotions.<br>Zero score shows no positive or negative emotions towards Subject 2. In other words, Subject 1 is unaware of Subject 2 or is indifferent.</p>
+
+            <div id="z1"></div>
+            <div id="z2"></div>
+            <div id="z3"></div>
+            <div id="z4"></div>
+            <div id="z5"></div>
+            <div id="z6"></div>
+            <div id="z7"></div>
+            <div id="z8"></div>
+            <div id="z9"></div>
+            <div id="z10"></div>
+            <div id="z11"></div>
+
          </div>
   
        </div>
@@ -828,10 +850,14 @@ $input.blur(function (e) {
   document.getElementById('a4').innerHTML = l;
   document.getElementById('a1').style.border = "2px solid black";
   document.getElementById('a2').style.border = "2px solid black";
-  
+  document.getElementById('a3').style.border = "2px solid black";
   document.getElementById('a4').style.border = "2px solid black";
   x.scrollIntoView();
- 
+  
+  if (l === 0){
+    document.getElementById('z1').style.display = "block";
+  }
+
 }
     </script>
 
