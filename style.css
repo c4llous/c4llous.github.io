@@ -1,5 +1,5 @@
 /* For the headers to look good, be sure to reset the margin and padding of the body */
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Prompt:ital,wght@0,100;1,100;1,300&family=Roboto+Condensed:ital,wght@1,300&display=swap');
 *{
     margin: 0;
     box-sizing: border-box;
@@ -146,10 +146,12 @@ body {
   color: #212121;
 }
 .jumbotron-title {
+  font-family: 'Roboto Condensed', sans-serif;
   text-transform: uppercase;
-  font-weight: 900;
+  font-weight: 1900;
 }
 .jumbotron-description {
+  font-family: 'Roboto Condensed', sans-serif;
   font-size: 16px;
   word-spacing: 2px;
   font-weight: 500;
