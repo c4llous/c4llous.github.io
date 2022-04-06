@@ -221,6 +221,9 @@ body {
     .row{
         display: block;
     }
+    .hero-image-container{
+      margin-top: 10vh;
+    }
 }
 .container{
     margin: 30px;
