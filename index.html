@@ -1,689 +1,283 @@
-<!DOCTYPE HTML>
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ritesh Singh — Zero Trust Engineer</title>
+    <meta
+      name="description"
+      content="Ritesh Singh — Senior Cyber Security Engineer at Ridge IT Cyber. Zero Trust, Zscaler, software engineering and AI."
+    />
+    <meta name="theme-color" content="#050507" />
+    <meta property="og:title" content="Ritesh Singh — Senior Cyber Security Engineer" />
+    <meta property="og:description" content="Zero Trust · Zscaler · Software Engineering · AI" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://c4llous.github.io/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      id="fonts-css"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Geist:wght@300..800&family=Geist+Mono:wght@400..600&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <link rel="preload" href="/ritesh-cutout.png" as="image" />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Geist:wght@300..800&family=Geist+Mono:wght@400..600&family=Instrument+Serif:ital@0;1&display=swap"
+      />
+      <style>
+        .boot, .cursor, .reticle, .leader, .hero__figure { display: none !important; }
+        .hero__fallback { display: block !important; }
+        body.is-booting { overflow: auto; }
+        [data-reveal] { opacity: 1 !important; transform: none !important; }
+        .evolution { display: none; }
+      </style>
+    </noscript>
+  </head>
+  <body class="is-booting">
+    <canvas id="world" aria-hidden="true"></canvas>
+    <div class="vignette" aria-hidden="true"></div>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ritesh - Freelancer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Hire me at affordable prices for your project" />
-    <meta name="keywords" content="Web developer, python coder,freelancer, ritesh singh, c4llous, callous ritesh, developer, affordable developer, ritesh coder" />
-    <meta name="author" content="Ritesh" />
-
-
-    <meta property="og:title" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:site_name" content="" />
-    <meta property="og:description" content="" />
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:image" content="" />
-    <meta name="twitter:url" content="" />
-    <meta name="twitter:card" content="" />
-
-    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
-
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="css/animate.css">
-    <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="css/icomoon.css">
-    <!-- Bootstrap  -->
-    <link rel="stylesheet" href="css/bootstrap.css">
-
-    <!-- Theme style  -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- Modernizr JS -->
-    <script src="js/modernizr-2.6.2.min.js"></script>
-    <!-- FOR IE9 below -->
-    <!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-
-</head>
-<style>
-    #thankyou-message {
-        display: none;
-    }
-</style>
-
-<body>
-
-    <div class="fh5co-loader"></div>
-    <!-- Put this code anywhere in the body of your page where you want the badge to show up. -->
-
-    <div itemscope itemtype='http://schema.org/Person' class='fiverr-seller-widget' style='display: inline-block;'>
-        <a itemprop='url' href=https://www.fiverr.com/developeritesh rel="nofollow" target="_blank" style='display: inline-block;'>
-            <div class='fiverr-seller-content' id='fiverr-seller-widget-content-a897cf31-d1bc-487c-95d9-46603c0d0c5d' itemprop='contentURL' style='display: none;'></div>
-            <div id='fiverr-widget-seller-data' style='display: none;'>
-                <div itemprop='name'>developeritesh</div>
-                <div itemscope itemtype='http://schema.org/Organization'><span itemprop='name'>Fiverr</span></div>
-                <div itemprop='jobtitle'>Seller</div>
-                <div itemprop='description'>Hello, I'm a full-stack developer and Python Automation scripter that will gladly turn your repetitive tasks into a script or help you scrape all of the data from the web in a short amount of time and resources. I also have a strong understanding
-                    of content management systems and web design. can assist you with Python Automation Scripts for any social media platform, Cms development with Wordpress, Mean Stack Applications, -Discord & Telegram Bots , Google Ads Automation I'm
-                    fluent in English and speak basic Spanish
-                </div>
-            </div>
-        </a>
+    <!-- ============ BOOT ============ -->
+    <div id="boot" class="boot" role="status" aria-live="polite">
+      <div class="boot__inner">
+        <div class="boot__head mono"><span>RS//OS</span><span>SECURE BOOT</span></div>
+        <pre class="boot__log mono" id="boot-log"></pre>
+        <div class="boot__bar"><span id="boot-bar"></span></div>
+        <div class="boot__foot mono"><span id="boot-pct">000%</span><span>PRESS ANY KEY TO SKIP</span></div>
+      </div>
+      <div class="boot__granted" id="boot-granted" aria-hidden="true">
+        <span>ACCESS</span><span>GRANTED</span>
+      </div>
     </div>
 
-    <script id='fiverr-seller-widget-script-a897cf31-d1bc-487c-95d9-46603c0d0c5d' src='https://widgets.fiverr.com/api/v1/seller/developeritesh?widget_id=a897cf31-d1bc-487c-95d9-46603c0d0c5d' data-config='{"category_name":"\n                                    Programming \u0026 Tech\n\n                            "}'
-        async='true' defer='true'></script>
+    <!-- ============ CHROME ============ -->
+    <header class="nav">
+      <a href="#top" class="nav__logo" data-cursor="home" aria-label="Back to top">RS<span>_</span></a>
+      <nav class="nav__links" id="nav-links" aria-label="Sections">
+        <a href="#evolution" data-scramble>Evolution</a>
+        <a href="#zero-trust" data-scramble>Zero Trust</a>
+        <a href="#modules" data-scramble>Modules</a>
+        <a href="#terminal" data-scramble>Terminal</a>
+        <a href="#contact" data-scramble>Contact</a>
+      </nav>
+      <a href="#contact" class="nav__cta mono" data-cursor="message">
+        <span class="pulse"></span>Message me
+      </a>
+      <button class="nav__menu mono" type="button" aria-expanded="false" aria-controls="nav-links">MENU</button>
+    </header>
 
-    <div id="page">
-        <header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner" style="background-image:url(images/cover_bg_32.jpg);" data-stellar-background-ratio="0.5">
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2 text-center">
-                        <div class="display-t js-fullheight">
-                            <div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
-                                <div class="profile-thumb" style="background: url(images/picofme.png);"></div>
-                                <h1><span>Ritesh(c4llous)</span></h1>
-                                <h3><span>Web Developer / Penetration Tester</span></h3>
-                                <!-- <p>
-                                    <ul class="fh5co-social-icons">
-                                        <li><a href="#"><i class="icon-twitter2"></i></a></li>
-                                        <li><a href="#"><i class="icon-facebook2"></i></a></li>
-                                        <li><a href="#"><i class="icon-linkedin2"></i></a></li>
-                                        <li><a href="#"><i class="icon-dribbble2"></i></a></li>
-                                    </ul>
-                                </p> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="hud mono" aria-hidden="true">
+      <div class="hud__bl"><span id="hud-time">--:--:-- UTC</span><span id="hud-section">// IDENTITY</span></div>
+      <div class="hud__br"><span>SCROLL</span><span id="hud-scroll">000%</span></div>
+      <div class="hud__progress"><span id="hud-progress"></span></div>
+    </div>
+
+    <div class="reticle" aria-hidden="true">
+      <div class="reticle__box"><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i></div>
+      <span class="reticle__label mono">IDENTITY: VERIFIED</span>
+      <span class="reticle__sub mono">FACE: REDACTED</span>
+    </div>
+    <svg class="leader" aria-hidden="true"><path id="leader-path" /><circle id="leader-dot" r="2.5" /></svg>
+
+    <div class="cursor" aria-hidden="true">
+      <div class="cursor__dot"></div>
+      <div class="cursor__ring"></div>
+      <div class="cursor__label mono"></div>
+    </div>
+
+    <main>
+      <!-- ============ HERO ============ -->
+      <section class="hero" id="top" data-formation="embers" data-label="IDENTITY">
+        <div class="hero__stage" aria-hidden="true">
+          <div class="hero__glow"></div>
+          <div class="hero__rays"></div>
+          <div class="hero__giant"><span>RITESH</span></div>
+          <canvas class="hero__figure" id="hero-figure"></canvas>
+          <img class="hero__fallback" src="/ritesh-cutout.png" alt="" />
+        </div>
+
+        <div class="hero__content">
+          <p class="hero__eyebrow mono reveal-boot"><span class="pulse"></span>Senior Cyber Security Engineer · Ridge IT Cyber</p>
+          <h1 class="hero__name reveal-boot">Ritesh Singh</h1>
+          <p class="hero__tag reveal-boot">Never trust. Always verify. <em class="grad-text">Actually build.</em></p>
+          <ul class="hero__chips mono reveal-boot" id="hero-chips"></ul>
+          <div class="hero__cta reveal-boot">
+            <a href="#contact" class="btn btn--grad" data-magnetic data-cursor="message"><span>Open a secure channel</span><i>↗</i></a>
+            <a href="#evolution" class="btn" data-magnetic data-cursor="enter"><span>Enter the system</span><i>↓</i></a>
+          </div>
+        </div>
+
+        <aside class="hero__readout mono reveal-boot" aria-label="Profile summary">
+          <div class="readout__title"><span class="pulse"></span>LIVE // SUBJECT SCAN</div>
+          <dl>
+            <div><dt>SUBJECT</dt><dd>RITESH SINGH</dd></div>
+            <div><dt>ROLE</dt><dd>SR. CYBER SECURITY ENGINEER</dd></div>
+            <div><dt>ORG</dt><dd>RIDGE IT CYBER</dd></div>
+            <div><dt>FOCUS</dt><dd>ZERO TRUST · ZIA · ZPA</dd></div>
+            <div><dt>FACE</dt><dd class="hot">REDACTED</dd></div>
+            <div><dt>POLICY</dt><dd class="sig">LEAST PRIVILEGE</dd></div>
+          </dl>
+        </aside>
+
+        <div class="hero__scroll mono reveal-boot"><span class="hero__scroll-line"></span>SCROLL</div>
+        <p class="hero__hint mono reveal-boot">move the light · try his face</p>
+      </section>
+
+      <div class="marquee mono" aria-hidden="true"><div class="marquee__track" id="marquee"></div></div>
+
+      <!-- ============ MANIFESTO ============ -->
+      <section class="manifesto" data-formation="dust" data-label="README">
+        <p class="eyebrow mono" data-reveal>// 00 — README.md</p>
+        <p class="manifesto__text" id="manifesto"></p>
+        <p class="manifesto__path mono" data-reveal>
+          <span>SOFTWARE</span><b>→</b><span>SYSTEMS</span><b>→</b><span>SECURITY</span><b>→</b><span>ZERO TRUST</span><b>→</b><span>AI</span>
+        </p>
+      </section>
+
+      <!-- ============ EVOLUTION ============ -->
+      <section class="evolution" id="evolution" data-label="EVOLUTION">
+        <div class="evolution__pin">
+          <div class="evolution__head mono">
+            <span>// CAREER.EVOLUTION</span>
+            <span class="evolution__count"><b id="ch-count">01</b> / <span id="ch-total">08</span></span>
+          </div>
+          <div class="evolution__stage">
+            <div class="chapter__index" id="ch-index" aria-hidden="true">01</div>
+            <p class="chapter__kicker mono" id="ch-kicker"></p>
+            <h2 class="chapter__title" id="ch-title"></h2>
+            <p class="chapter__body" id="ch-body"></p>
+            <ul class="chapter__tags mono" id="ch-tags"></ul>
+            <code class="chapter__cmd mono" id="ch-cmd"></code>
+          </div>
+          <ol class="evolution__rail mono" id="ch-rail"></ol>
+        </div>
+      </section>
+
+      <!-- ============ ZERO TRUST SIM ============ -->
+      <section class="zt" id="zero-trust" data-formation="rings" data-side="center" data-label="ZERO TRUST">
+        <header class="section-head">
+          <p class="eyebrow mono" data-reveal>// 09 — LIVE SIMULATION</p>
+          <h2 data-reveal>Anatomy of a <em class="grad-text">Zero Trust</em> connection.</h2>
+          <p class="lede" data-reveal>
+            Users connect to applications — never to the network. Pick a scenario and watch identity, posture and policy decide
+            in real time.
+          </p>
         </header>
+        <div class="zt__panel" data-reveal>
+          <div class="zt__scenarios" id="zt-scenarios" role="group" aria-label="Scenarios"></div>
+          <div class="zt__diagram" id="zt-diagram"></div>
+          <div class="zt__console mono">
+            <div class="zt__console-head"><span>POLICY ENGINE // EVENT LOG</span><span id="zt-verdict" class="verdict">IDLE</span></div>
+            <ol id="zt-log" aria-live="polite"></ol>
+          </div>
+        </div>
+        <p class="zt__note mono">Simplified illustration of a Zscaler-style Zero Trust flow. No real environment is shown.</p>
+      </section>
 
-        <div id="fh5co-about" class="animate-box">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                        <h2>About Me</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <ul class="info">
-                            <li><span class="first-block">Full Name:</span><span class="second-block">Ritesh Singh</span></li>
-                            <li><span class="first-block">Phone:</span><span class="second-block">+91 82956 97816</span></li>
-                            <li><span class="first-block">Email:</span><span class="second-block">developritesh@gmail.com</span></li>
-                            <li><span class="first-block">Website:</span><span class="second-block">www.c4llous.github.io</span></li>
-                            <li><span class="first-block">Address:</span><span class="second-block">Panchkula INDIA</span></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-8">
-                        <h2>Hello There!</h2>
-                        <p>Hello, I'm a full-stack developer and Python Automation scripter that will gladly turn your repetitive tasks into a script or help you scrape all of the data from the web in a short amount of time and resources. I also have a strong
-                            understanding of content management systems and web design.
-                        </p>
-                        <p>Apart from that, I work as a penetration tester, where I learn about new web vulnerabilities and solve challenges on hackthebox. I am well-versed in linux and networking.</p>
-                        <!-- <p>
-                            <ul class="fh5co-social-icons">
-                                <li><a href="#"><i class="icon-twitter2"></i></a></li>
-                                <li><a href="#"><i class="icon-facebook3"></i></a></li>
-                                <li><a href="#"><i class="icon-linkedin2"></i></a></li>
-                                <li><a href="#"><i class="icon-dribbble2"></i></a></li>
-                            </ul>
-                        </p> -->
-                    </div>
-                </div>
+      <!-- ============ MODULES ============ -->
+      <section class="modules" id="modules" data-formation="dust" data-label="MODULES">
+        <header class="section-head">
+          <p class="eyebrow mono" data-reveal>// 10 — LOADED MODULES</p>
+          <h2 data-reveal>Capabilities, <em class="grad-text">not</em> buzzwords.</h2>
+        </header>
+        <ol class="modules__list" id="modules-list"></ol>
+      </section>
+
+      <!-- ============ TERMINAL ============ -->
+      <section class="term-sec" id="terminal" data-formation="globe" data-label="TERMINAL">
+        <header class="section-head">
+          <p class="eyebrow mono" data-reveal>// 11 — DIRECT ACCESS</p>
+          <h2 data-reveal>Talk to the <em class="grad-text">system</em>.</h2>
+          <p class="lede" data-reveal>
+            A real shell (well, almost). Run <code>./contact.sh</code> to message Ritesh directly, or type <code>help</code>.
+          </p>
+        </header>
+        <div class="term" id="term" data-reveal>
+          <div class="term__bar mono">
+            <i></i><i></i><i></i>
+            <span>ritesh@ridge: ~ — zsh — encrypted</span>
+          </div>
+          <div class="term__body mono" id="term-body">
+            <div class="term__out" id="term-out"></div>
+            <label class="term__line">
+              <span class="term__prompt">ritesh@ridge:~$</span>
+              <input id="term-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal input" />
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section class="contact" id="contact" data-formation="embers" data-label="SECURE CHANNEL">
+        <div class="contact__grid">
+          <div class="contact__main">
+            <p class="eyebrow mono" data-reveal>// 12 — ESTABLISH SECURE CHANNEL</p>
+            <h2 class="contact__title" data-reveal>Let's build something <em class="grad-text">secure by design.</em></h2>
+            <p class="lede" data-reveal>Messages land straight on Ritesh's phone. No inbox black hole, no auto-reply.</p>
+
+            <form class="channel" id="channel" data-reveal novalidate>
+              <div class="channel__head mono">
+                <span><i class="pulse"></i>END-TO-RITESH CHANNEL</span><span class="channel__state" id="channel-state">READY</span>
+              </div>
+              <div class="channel__row">
+                <label class="field">
+                  <span class="mono">who's knocking?</span>
+                  <input name="name" autocomplete="name" maxlength="80" placeholder="Your name" />
+                </label>
+                <label class="field">
+                  <span class="mono">email or phone</span>
+                  <input name="contact" autocomplete="email" maxlength="120" placeholder="you@company.com" required />
+                </label>
+              </div>
+              <label class="field">
+                <span class="mono">what's the mission?</span>
+                <textarea name="message" rows="4" maxlength="2000" placeholder="Tell me what you're building, breaking or securing…" required></textarea>
+              </label>
+              <input class="channel__hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+              <div class="channel__foot">
+                <button class="btn btn--grad" type="submit" data-magnetic><span>Transmit</span><i>↗</i></button>
+                <p class="channel__alt mono">
+                  prefer a shell? <button type="button" class="linklike" data-action="terminal-contact">run ./contact.sh</button>
+                </p>
+              </div>
+              <p class="channel__error mono" id="channel-error" role="alert"></p>
+            </form>
+
+            <div class="channel-done" id="channel-done" hidden>
+              <pre class="channel-done__banner" aria-hidden="true"></pre>
+              <p class="channel-done__title">Ritesh will get back to you — <em class="grad-text">sooner or later.</em></p>
+              <p class="channel-done__punch mono" id="channel-punch"></p>
+              <button type="button" class="btn" id="channel-again"><span>Send another</span><i>↺</i></button>
             </div>
+
+            <div class="contact__links" id="contact-links"></div>
+          </div>
+
+          <figure class="contact__thermal" aria-hidden="true">
+            <canvas id="thermal-figure"></canvas>
+            <span class="thermal__tag mono">FACE: REDACTED</span>
+            <figcaption class="mono">
+              <span><i class="pulse pulse--hot"></i>HEAT SIGNATURE</span>
+              <span>OPERATOR: ONLINE</span>
+              <span id="thermal-temp">36.6°C</span>
+            </figcaption>
+          </figure>
         </div>
 
-        <!-- <div id="fh5co-resume" class="fh5co-bg-color">
-            <div class="container">
-                <div class="row animate-box">
-                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                        <h2>My Resume</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 col-md-offset-0">
-                        <ul class="timeline">
-                            <li class="timeline-heading text-center animate-box">
-                                <div>
-                                    <h3>Work Experience</h3>
-                                </div>
-                            </li>
-                            <li class="animate-box timeline-unverted">
-                                <div class="timeline-badge"><i class="icon-suitcase"></i></div>
-                                <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <h3 class="timeline-title">Junior Developer</h3>
-                                        <span class="company">KVR Webtech - Current</span>
-                                    </div>
-                                    <div class="timeline-body">
-                                        <p>At KVR webtech I work as a Junior Php developer. </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="animate-box timeline-unverted">
-                                <div class="timeline-badge"><i class="icon-suitcase"></i></div>
-                                <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <h3 class="timeline-title">Junior Developer</h3>
-                                        <span class="company">ITxSential - 2022</span>
-                                    </div>
-                                    <div class="timeline-body">
-                                        <p>At ITxSential, I work as a junior developer intern, developing desktop applications, websites with CMS, and automation scripts.</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="timeline-inverted animate-box">
-                                <div class="timeline-badge"><i class="icon-suitcase"></i></div>
-                                <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <h3 class="timeline-title">Freelance </h3>
-                                        <span class="company">Fiverr & Upwork - 2021 - Current</span>
-                                    </div>
-                                    <div class="timeline-body">
-                                        <p>As a student, I supplement my income by providing services such as web application development, automation scripts, and data mining.</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="animate-box timeline-unverted">
-                                <div class="timeline-badge"><i class="icon-suitcase"></i></div>
-                                <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <h3 class="timeline-title">Penitration Testing</h3>
-                                        <span class="company">Hackthebox - 2020 - Current</span>
-                                    </div>
-                                    <div class="timeline-body">
-                                        <p>My ideal job is to work as a full-time penitration tester. As a result, I decided Hackthebox as a venue to enhance my Pentesting abilities.</p>
-                                    </div>
-                                </div>
-                            </li>
+        <footer class="footer mono">
+          <span>© <span id="year"></span> RITESH SINGH</span>
+          <span>DESIGNED &amp; ENGINEERED IN-HOUSE</span>
+          <span>ZERO TRUST. ZERO TEMPLATES.</span>
+        </footer>
+      </section>
+    </main>
 
-                            <br>
-                            <li class="timeline-heading text-center animate-box">
-                                <div>
-                                    <h3>Education</h3>
-                                </div>
-                            </li>
-                            <li class="timeline-inverted animate-box">
-                                <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
-                                <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <h3 class="timeline-title">Bachelors Degree</h3>
-                                        <span class="company">DAV Chandigarh - 2020 - Current</span>
-                                    </div>
-                                    <div class="timeline-body">
-                                        <p>I am a BCA student at Chandigarh's Dav College.</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="animate-box timeline-unverted">
-                                <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
-                                <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <h3 class="timeline-title">CLass 12</h3>
-                                        <span class="company">JNV PANCHKULa - 2019 - 2020</span>
-                                    </div>
-                                    <div class="timeline-body">
-                                        <p>My school, Jawahar navodaya vidyalaya Panchkula, where I spent seven golden years of my life, is still the finest portion of my life.</p>
-                                    </div>
-                                </div>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-
-        <div id="fh5co-features" class="animate-box">
-            <div class="container">
-                <div class="services-padding">
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                            <h2>My Services</h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4 text-center">
-                            <div class="feature-left">
-                                <span class="icon">
-								<i class="icon-paintbrush"></i>
-							</span>
-                                <div class="feature-copy">
-                                    <h3>Web applications</h3>
-                                    <p>Depending on the project's complexity, we'll build you a web application using the MEAN/MERN stack or the Django Python Framework. .
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 text-center">
-                            <div class="feature-left">
-                                <span class="icon">
-								<i class="icon-briefcase"></i>
-							</span>
-                                <div class="feature-copy">
-                                    <h3>Wordpress Development</h3>
-                                    <p>I have a strong understanding of the WordPress CMS and WooCommerce, and can build an online store or a blog website using premium themes and plugins.
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-md-4 text-center">
-                            <div class="feature-left">
-                                <span class="icon">
-								<i class="icon-search"></i>
-							</span>
-                                <div class="feature-copy">
-                                    <h3>Automated YouTube Chanel</h3>
-                                    <p>I'll create a fully automated YouTube channel for you that will automatically take videos from a custom source you designate and broadcast them in a timely manner, either daily or hourly.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-md-4 text-center">
-
-                            <div class="feature-left">
-                                <span class="icon">
-								<i class="icon-bargraph"></i>
-							</span>
-                                <div class="feature-copy">
-                                    <h3>Social Media Automation</h3>
-                                    <p>To automate the majority of the repetitive operations on social media, I'll utilize python automation scripting and selenium.</p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-4 text-center">
-                            <div class="feature-left">
-                                <span class="icon">
-								<i class="icon-genius"></i>
-							</span>
-                                <div class="feature-copy">
-                                    <h3>Desktop Applications</h3>
-                                    <p>Provide you a simple desktop application to save data on your system for local activities such as report generation and data management.
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-md-4 text-center">
-                            <div class="feature-left">
-                                <span class="icon">
-								<i class="icon-chat"></i>
-							</span>
-                                <div class="feature-copy">
-                                    <h3>Custom Project</h3>
-                                    <p>Please feel free to share your business concept with me. Perhaps we'll discover something new together, or if you have a college/university assignment, I'm always available.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="fh5co-skills" class="animate-box">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                        <h2>Skills</h2>
-                    </div>
-                </div>
-                <div class="row row-pb-md">
-                    <div class="col-md-3 col-sm-6 col-xs-12 text-center">
-                        <div class="chart" data-percent="90"><span><strong>HTML5 & CSS3</strong>90%</span></div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12 text-center">
-                        <div class="chart" data-percent="80"><span><strong>javascript</strong>80%</span></div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12 text-center">
-                        <div class="chart" data-percent="85"><span><strong>Python</strong>85%</span></div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12 text-center">
-                        <div class="chart" data-percent="50"><span><strong>PHP</strong>50%</span></div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12 text-center">
-                        <div class="chart" data-percent="85"><span><strong>MySQL</strong>85%</span></div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12 text-center">
-                        <div class="chart" data-percent="75"><span><strong>C/CPP</strong>75%</span></div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12 text-center">
-                        <div class="chart" data-percent="90"><span><strong>WordPress</strong>90%</span></div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12 text-center">
-                        <div class="chart" data-percent="90"><span><strong>Canva</strong>90%</span></div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="progress-wrap">
-                            <h3><span class="name-left">ANGULAR JS</span><span class="value-right">65%</span></h3>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-1 progress-bar-striped active" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width:65%">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="progress-wrap">
-                            <h3><span class="name-left">REACT JS</span><span class="value-right">50%</span></h3>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-2 progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="progress-wrap">
-                            <h3><span class="name-left">DJANGO</span><span class="value-right">70%</span></h3>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-3 progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="progress-wrap">
-                            <h3><span class="name-left">NODE JS</span><span class="value-right">70%</span></h3>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-4 progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="progress-wrap">
-                            <h3><span class="name-left">LINUX</span><span class="value-right">60%</span></h3>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-5 progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="progress-wrap">
-                            <h3><span class="name-left">ELECTRON JS</span><span class="value-right">70%</span></h3>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="progress-wrap">
-                            <h3><span class="name-left">FLASk</span><span class="value-right">85%</span></h3>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-1 progress-bar-striped active" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="progress-wrap">
-                            <h3><span class="name-left">WEB EXPLOITATION</span><span class="value-right">45%</span></h3>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-3 progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:45%">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- <div id="fh5co-work" class="fh5co-bg-dark">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Work</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-3 text-center col-padding animate-box">
-					<a href="#" class="work" style="background-image: url(images/portfolio-1.jpg);">
-						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Illustration</span>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 text-center col-padding animate-box">
-					<a href="#" class="work" style="background-image: url(images/portfolio-2.jpg);">
-						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Brading</span>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 text-center col-padding animate-box">
-					<a href="#" class="work" style="background-image: url(images/portfolio-3.jpg);">
-						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Illustration</span>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 text-center col-padding animate-box">
-					<a href="#" class="work" style="background-image: url(images/portfolio-4.jpg);">
-						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Design</span>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 text-center col-padding animate-box">
-					<a href="#" class="work" style="background-image: url(images/portfolio-5.jpg);">
-						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Website</span>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 text-center col-padding animate-box">
-					<a href="#" class="work" style="background-image: url(images/portfolio-6.jpg);">
-						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Illustration</span>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 text-center col-padding animate-box">
-					<a href="#" class="work" style="background-image: url(images/portfolio-7.jpg);">
-						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Brading</span>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 text-center col-padding animate-box">
-					<a href="#" class="work" style="background-image: url(images/portfolio-8.jpg);">
-						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Illustration</span>
-						</div>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div> -->
-
-        <!-- <div id="fh5co-blog">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Post on Medium</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4">
-					<div class="fh5co-blog animate-box">
-						<a href="#" class="blog-bg" style="background-image: url(images/portfolio-1.jpg);"></a>
-						<div class="blog-text">
-							<span class="posted_on">Mar. 15th 2016</span>
-							<h3><a href="#">Photoshoot On The Street</a></h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-							<ul class="stuff">
-								<li><i class="icon-heart2"></i>249</li>
-								<li><i class="icon-eye2"></i>308</li>
-								<li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
-							</ul>
-						</div> 
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="fh5co-blog animate-box">
-						<a href="#" class="blog-bg" style="background-image: url(images/portfolio-2.jpg);"></a>
-						<div class="blog-text">
-							<span class="posted_on">Mar. 15th 2016</span>
-							<h3><a href="#">Surfing at Philippines</a></h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-							<ul class="stuff">
-								<li><i class="icon-heart2"></i>249</li>
-								<li><i class="icon-eye2"></i>308</li>
-								<li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
-							</ul>
-						</div> 
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="fh5co-blog animate-box">
-						<a href="#" class="blog-bg" style="background-image: url(images/portfolio-3.jpg);"></a>
-						<div class="blog-text">
-							<span class="posted_on">Mar. 15th 2016</span>
-							<h3><a href="#">Capture Living On Uderwater</a></h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-							<ul class="stuff">
-								<li><i class="icon-heart2"></i>249</li>
-								<li><i class="icon-eye2"></i>308</li>
-								<li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
-							</ul>
-						</div> 
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
-
-        <div id="fh5co-started" class="fh5co-bg-dark">
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="row animate-box">
-                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                        <h2>Hire Me for a Project!</h2>
-                        <p>Kindly do not afraid to contact me for your task. I guarantee you is that I will do my best to complete the job on time schedule and to your level of satisfaction.</p>
-                        <p><a href="#fh5co-consult" class="btn btn-default btn-lg">Hire me for best deal</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="fh5co-consult">
-            <div class="video fh5co-video" style="background-image: url(images/cover_bg_1.jpg);">
-                <div class="overlay"></div>
-            </div>
-            <div class="choose animate-box" id="contact-form">
-                <h2>Contact</h2>
-                <form>
-                    <div class="row form-group">
-                        <div class="col-md-12">
-                            <input type="text" id="fname" class="form-control" placeholder="Your name">
-                        </div>
-                    </div>
-
-
-                    <div class="row form-group">
-                        <div class="col-md-12">
-                            <input type="text" id="email" class="form-control" placeholder="Your email address">
-                        </div>
-                    </div>
-
-                    <div class="row form-group">
-                        <div class="col-md-12">
-                            <input type="text" id="subject" class="form-control" placeholder="Your subject of this message">
-                        </div>
-                    </div>
-
-                    <div class="row form-group">
-                        <div class="col-md-12">
-                            <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <button type="button" onclick="myFunction();" class="btn btn-primary">Get My Offer</button>
-                    </div>
-
-                </form>
-            </div>
-            <div class="choose" id="thankyou-message" style="padding-top: 750px; display: none;">
-                <p style="border: 5px solid black;">Thank You for Contacting Me</p>
-            </div>
-        </div>
-        <!-- 
-	<div id="map" class="fh5co-map"></div> -->
-    </div>
-
-    <div id="fh5co-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <p> Designed by Me :)</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="gototop js-top">
-        <a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
-    </div>
-
-    <!-- jQuery -->
-    <script src="js/jquery.min.js"></script>
-    <!-- jQuery Easing -->
-    <script src="js/jquery.easing.1.3.js"></script>
-    <!-- Bootstrap -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Waypoints -->
-    <script src="js/jquery.waypoints.min.js"></script>
-    <!-- Stellar Parallax -->
-    <script src="js/jquery.stellar.min.js"></script>
-    <!-- Easy PieChart -->
-    <script src="js/jquery.easypiechart.min.js"></script>
-    <!-- Google Map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-    <script src="js/google_map.js"></script>
-
-    <!-- Main -->
-    <script src="js/main.js"></script>
-    <script>
-        function myFunction() {
-            var fname = document.getElementById('fname').value;
-
-            var email = document.getElementById('email').value;
-            var subject = document.getElementById('subject').value;
-            var message = document.getElementById('message').value;
-
-
-            if (fname == '' || email == '') {
-                alert("Form Fields are Empty")
-
-            } else {
-                var message = 'Name : ' + fname + '                            Email : ' + email + '                               Subject : ' + subject + '                                    message : ' + message;
-                // var message = 'Name : ' + fname + '                                                  ' + 'Country : ' + country;
-
-                var token = "5408942864:AAEh0s8PdMPak7JseLyENc63ZM8qMePG8jg";
-                var chat_id = 1455270760;
-                var url = 'https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + chat_id + '&text=' + message;
-
-                var oReq = new XMLHttpRequest();
-                oReq.open("GET", url, true);
-                oReq.send();
-                console.log("message-sent")
-                document.getElementById('contact-form').style.display = 'none';
-                document.getElementById('thankyou-message').style.display = 'block';
-            }
-        }
-    </script>
-
-</body>
-
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>

@@ -1,0 +1,10 @@
+node_modules
+dist
+.DS_Store
+.vercel
+# secrets — never commit
+.env
+.env.local
+.env.*.local
+# unused original photo (face visible) — keep out of the public repo
+public/ritesh.jpg
